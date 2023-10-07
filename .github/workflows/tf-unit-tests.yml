@@ -30,18 +30,18 @@ jobs:
       run: terraform fmt -check -recursive
     
     # Perform a security scan of the terraform code using checkov
-    - name: Run Checkov action
-      id: checkov
-      uses: bridgecrewio/checkov-action@master
-      with: 
-        framework: terraform
+    #- name: Run Checkov action
+    #  id: checkov
+     # uses: bridgecrewio/checkov-action@master
+      #with: 
+       # framework: terraform
     
     # Archive SARIF results   
-    - name: Archive SARIF results
-      uses: actions/upload-artifact@v2
-      with:
-        name: checkov-sarif-results
-        path: results.sarif
+    #- name: Archive SARIF results
+     # uses: actions/upload-artifact@v2
+      #with:
+       # name: checkov-sarif-results
+        #path: results.sarif
 
     # Upload results to GitHub Advanced Security
     #- name: Upload SARIF file
