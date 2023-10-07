@@ -35,6 +35,13 @@ jobs:
       uses: bridgecrewio/checkov-action@master
       with: 
         framework: terraform
+    
+    # Archive SARIF results   
+    - name: Archive SARIF results
+      uses: actions/upload-artifact@v2
+      with:
+        name: checkov-sarif-results
+        path: results.sarif
 
     # Upload results to GitHub Advanced Security
     #- name: Upload SARIF file
